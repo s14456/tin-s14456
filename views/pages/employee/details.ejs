@@ -1,0 +1,40 @@
+<%- include('../../fragments/header.ejs') %>
+<% if (formMode == 'showDetails' || formMode == 'edit') { %>
+    <h2>
+        Szczegóły serwisu samochodu
+    </h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>ID Samochodu</th>
+            <th>Usługa</th>
+            <th>Koszt</th>
+            <th>Data od</th>
+            <th>Data do</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (let e of emp.employments) { %>
+            <tr>
+                <td><a href="/departments/details/<%= e.department._id %>"><%= e.service.name %></a></td>
+                <td><%= e.usluga %></td>
+                <td><%= e.koszt %></td>
+                <td><%= e.dateFrom.toISOString().split('T')[0] %></td>
+                <td><%= e.dateTo ? e.dateTo.toISOString().split('T')[0] : '' %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+    <div class="form-buttons">
+        <p id="errorsSummary" class="errors-text"></p>
+        <% if (formMode != 'showDetails') { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+            <a class="form-button-cancel" href="/employee">Anuluj</a>
+        <% } else { %>
+            <a class="form-button-cancel" href="/employee">Powrót</a>
+        <% } %>
+    </div>
+    
+    
+    <% } %>
+<%- include('../../fragments/footer.ejs') %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanika pojazdowa</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+    <h1>Mechanika pojazdowa</h1>
+    <img src="/img/logo.png" alt="ACME HR Department Logo">
+</header>
+<nav>
+    <ul>
+        <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona główna</a></li>
+        <% if(loggedUser) { %>
+            <li><a href="/employees" class="<%= navLocation == 'emp' ? 'active' : ''%>">Pracownicy</a></li>
+            <% } %>
+        <li><a href="/service" class="<%= navLocation == 'service' ? 'active' : ''%>">Usługi</a></li>
+        <li><a href="/cars" class="<%= navLocation == 'cars' ? 'active' : ''%>">Samochody</a></li>
+    </ul>
+</nav>
+<% if(!loggedUser) { %>
+    <div id="login">
+        <h5>Logowanie</h5>
+        <form method="post" action="/login" novalidate>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="email">
+
+            <label for="loginPassword">Hasło:</label>
+            <input type="password" id="loginPassword" name="password">
+
+            <input type="submit" value="Zaloguj się">
+            <span id="loginErrors"><%= loginError ? loginError : ''%></span>
+        </form>
+    </div>
+<% } else { %>
+    <span>Jesteś zalogowany jako: <%=loggedUser.firstName + " " + loggedUser.lastName%></span>
+    <a href="/logout">Wyloguj się</a>
+<% } %>
+
+

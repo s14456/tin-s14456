@@ -1,0 +1,52 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <script type="application/javascript" src="/js/validationEmpForm.js"></script>
+    <h2><%= pageTitle %></h2>
+
+
+<body>
+    <form class="form" method="post" action="<%=formAction%>" novalidate >
+        <input type="hidden" name="_id" value="<%= emp._id %>">
+        <!-- <div class="form-group"> -->
+            
+            <label for="firstName">Imie</label>
+            <input type="text" name="firstName" id="firstName" placeholder="2-60 znaków" value="<%= emp.firstName %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorFirstName" class="errors-text"></span>
+        <!-- </div> -->
+        <!-- <div class="form-group"> -->
+            <label for="lastName">Nazwisko</label>
+            <input type="text" name="lastName" id="lastName" placeholder="2-60 znaków" value="<%= emp.lastName %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLastName" class="errors-text"></span>
+        <!-- </div>
+        <div class="form-group"> -->
+            <label for="telephone">Numer Telefonu</label>
+            <input type="number" name="telephone" id="telephone" placeholder="xxx-xxx-xxx" value="<%= emp.telephone %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+            <span id="errorTelephone" class="errors-text"></span>
+        <!-- </div>
+        <div class="form-group"> -->
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" id="email" placeholder="np. nazwa@domena.pl" value="<%= emp.email %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+            <span id="errorEmail" class="errors-text"></span>
+        <!-- </div> -->
+        <div class="form-buttons">
+            <p>
+                <% if (formMode == 'showDetails') { %>
+                    <div class="section-buttons">
+                        <a href="/employees/edit/<%= emp._id %>" class="button-edit">Edytuj</a>
+                    </div>
+                    <% } %>
+                    <span id="errorFirstName" class="errors-text">
+                        <% if (validationErrors.find(e => e.path.includes('firstName'))) { %>
+                            <%= validationErrors.find(e => e.path.includes('firstName')).message %>
+                        <% } %>
+                        </span>                    
+                <input type="submit" class="<%= validationErrors.find(e => e.path.includes('firstName')) ? 'error-input' : '' %>" value="Dodaj"/>
+                <a href="../index.html" class="form-button-cancel">Anuluj</a>
+            </p>   
+        </div>
+    </form>
+    <%- include('../../fragments/footer.ejs') %>

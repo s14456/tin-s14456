@@ -1,0 +1,26 @@
+<%- include('../../fragments/header.ejs') %>
+    <h2>Szczegóły Samochodu</h2>
+<body>
+    <form class="form">
+        <div class="form-group">
+            <label for="carModel">Marka</label>
+            <input type="text" name="carModel" value="Supra" id="carModel" disabled/>
+        </div>
+        <div class="form-group">
+            <label for="carMark">Model</label>
+            <input type="text" name="carMark" value="Toyota" id="carMark" disabled/>
+        </div>
+        <div class="form-group">
+            <label for="RokProdukcji">Rok Produkcji</label>
+            <input type="number" name="rokProdukcji" value="2001" id="rokProdukcji" disabled/>
+        </div>
+        <div class="form-group">
+            <label for="ChassisNumber">Numer Nadwozia</label>
+            <input type="number" name="chassisNumber" value="0987654321" id="chassisNumber" disabled/>
+        </div>
+        <div class="form-buttons">
+            <a href="employee-form.html" class="list-actions-button-edit">Edytuj</a>
+            <a href="cars-list.html" class="list-actions-button-details">Powrót</a>
+        </div>  
+    </form>
+    <%- include('../../fragments/footer.ejs') %>

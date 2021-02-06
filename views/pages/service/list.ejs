@@ -1,0 +1,59 @@
+<%- include('../../fragments/header.ejs') %>
+    <main>
+        <h2>Lista Usług</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Typ Uslugi</th>
+                    <th>Koszt</th>
+                    <th>DataOD</th>
+                    <th>DataDO</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Przeglad</td>
+                    <td>300</td>
+                    <td>11-06-2002</td>
+                    <td>12-06-2002</td>
+                    <td>
+                        <ul class="table-list-actions">
+                            <li>
+                                <a href="" class="list-actions-button-details">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-actions-button-edit">Edytuj</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-actions-button-delete">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wymiana oleju</td>
+                    <td>160</td>
+                    <td>12-12-2012</td>
+                    <td>12-12-2020</td>
+                    <td>
+                        <ul class="table-list-actions">
+                            <li>
+                                <a href="" class="list-actions-button-details">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-actions-button-edit">Edytuj</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-actions-button-delete">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="" class="button-add">Dodaj nowa usluge</a>
+        </p>
+    </main>
+    <%- include('../../fragments/footer.ejs') %>

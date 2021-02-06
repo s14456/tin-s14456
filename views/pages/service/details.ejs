@@ -1,0 +1,45 @@
+<%- include('../../fragments/header.ejs') %>
+    <h2>Szczegóły Usługi</h2>
+<body>
+    <form>
+        <div>
+            <label for="firstName">Imie</label>
+            <input type="text" name="firstName" value="Jan" id="firstName" disabled/>
+        </div>
+        <div>
+            <label for="lastName">Nazwisko</label>
+            <input type="text" name="lastName" value="Kowalski" id="lastName" disabled/>
+        </div>
+        <div>
+            <label for="telephone">Numer Telefonu</label>
+            <input type="number" name="telephone" value="123-456-789" id="telephone" disabled/>
+        </div>
+        <div>
+            <label for="e-mail">E-Mail</label>
+            <input type="email" name="e-mail" value="janko@mp.pl" id="e-mail" disabled/>
+        </div>
+        <a href="employee-form.html">Edytuj</a>
+    <h2> Usługa</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID_Samochod</th>
+                    <th>Typ usługi</th>
+                    <th>Koszt</th>
+                    <th>Data Przyjecia</th>
+                    <th>Data Odbioru</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Przeglad</td>
+                    <td>300</td>
+                    <td>17-10-2020</td>
+                    <td>6-11-2020</td>
+                </tr>
+            </tbody>
+        </table>
+            <a href="eployees-list.html">Powrót</a>
+    </form>
+    <%- include('../../fragments/footer.ejs') %>

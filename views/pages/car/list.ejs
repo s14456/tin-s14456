@@ -1,0 +1,59 @@
+<%- include('../../fragments/header.ejs') %>
+    <main>
+        <h2>Lista Samochodów</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Marka</th>
+                    <th>Rok produkcji</th>
+                    <th>Numer nadwozia</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Imprez</td>
+                    <td>Subaru</td>
+                    <td>2004</td>
+                    <td>1234567890</td>
+                    <td>
+                        <ul class="table-list-actions">
+                            <li>
+                                <a href="cars-details.html" class="list-actions-button-details">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a href="cars-form.html" class="list-actions-button-edit">Edytuj</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-actions-button-delete">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Supra</td>
+                    <td>Toyota</td>
+                    <td>2001</td>
+                    <td>0987654321</td>
+                    <td>
+                        <ul class="table-list-actions">
+                            <li>
+                                <a href="cars-details.html" class="list-actions-button-details">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a href="cars-form.html" class="list-actions-button-edit">Edytuj</a>
+                            </li>
+                            <li>
+                                <a href="" class="list-actions-button-delete">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="cars-form.html" class="button-add">Dodaj nowy samochod</a>
+        </p>
+    </main>
+<%- include('../../fragments/footer.ejs') %>

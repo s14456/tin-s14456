@@ -1,0 +1,30 @@
+<%- include('../../fragments/header.ejs') %>
+    <h2>Nowy samochód</h2>
+<body>
+    <form class="form" novalidate onsubmit="return validateForm();">
+        
+            <label for="carModel">Marka</label>
+            <input type="text" name="carModel" value="" id="carModel" placeholder="Model"/>
+            <span id="errorCarModel" class="errors-text"></span>
+        
+            <label for="carMark">Model</label>
+            <input type="text" name="carMark" value="" id="carMark" />
+            <span id="errorCarMark" class="errors-text"></span>
+        
+            <label for="RokProdukcji">Rok Produkcji</label>
+            <input type="number" name="rokProdukcji" value="" id="rokProdukcji" />
+            <span id="errorRokProdukcji" class="errors-text"></span>
+        
+            <label for="ChassisNumber">Numer Nadwozia</label>
+            <input type="number" name="chassisNumber" value="" id="chassisNumber" />
+            <span id="errorChassisNumber" class="errors-text"></span>
+        
+        <div class="form-buttons">
+            <p>
+                <p id="errorsSummary" class="errors-text"></p>
+                <input type="submit" a href="cars-list.html" class="form-button-submit" value="Dodaj"/>
+                <a href="../index.html" class="form-button-cancel">Anuluj</a>
+            </p> 
+        </div>
+    </form>
+<%- include('../../fragments/footer.ejs') %>

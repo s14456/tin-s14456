@@ -1,0 +1,31 @@
+<%- include('../../fragments/header.ejs') %>
+    <h2>Nowa Usługa</h2>
+<body>
+    <form class="form">
+        
+            <label for="firstName">Imie</label>
+            <input type="text" name="firstName" id="firstName">
+        
+            <label for="lastName">Nazwisko</label>
+            <input type="text" name="lastName" id="lastName">
+        
+            <label for="telephone">Numer Telefonu</label>
+            <input type="number" name="telephone" id="telephone">
+        
+            <label for="e-mail">E-Mail</label>
+            <input type="email" name="e-mail" id="e-mail">
+            
+            <select id="employee" name="empId" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
+                <option value="" selected>--- Wybierz pracownika ---</option>
+                <% for (let i=0; i<allEmps.length; i++) { let emp = allEmps[i]; %>
+                    <option value="<%= emp._id %>" label="<%= emp.firstName + ' ' + emp.lastName %>"
+                        <%= (employment._id && emp._id.toString() == employment.employee._id.toString()) ? 'selected' : ''%>></option>
+                <% } %>
+            </select>            
+            <p>
+                <input type="submit" class="button-add" value="Dodaj"/>
+                <a href="../index.html" class="button-cancel">Anuluj</a>
+            </p> 
+        </div>
+    </form>
+    <%- include('../../fragments/footer.ejs') %>
